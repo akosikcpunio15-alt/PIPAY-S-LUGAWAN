@@ -1,0 +1,258 @@
+/* Base Styles and Color Scheme Variables */
+:root {
+    --primary-color: #FAA214; /* OrangeRed - Pangunahing Kulay (gagamitin sa borders/accents) */
+    --solid-red: #D90000; /* SOLID RED - Ito ang gagamitin para sa background ng Divs */
+    --background-color: #1a1a1a; /* Dark Black/Gray - Background ng Body */
+    --text-color: #ffffff; /* White - Pangunahing Teksto */
+    --box-background: var(--solid-red); /* ADJUSTED: SOLID RED DIV BACKGROUND */
+    --nav-footer-bg: #000000; /* Pure Black - NavBar at Footer */
+}
+
+html {
+    scroll-behavior: smooth; /* Para gumana ang smooth scroll */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Navigation Bar Styling */
+.navbar {
+    background-color: var(--nav-footer-bg);
+    color: var(--text-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 3px solid var(--primary-color);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+    background-color: #333333; /* Darker background on hover */
+    border-radius: 5px;
+}
+
+/* General Section and Content Styling */
+.section-container {
+    padding: 30px 5%;
+    min-height: auto; 
+    text-align: center;
+}
+
+.section-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: var(--text-color); /* White Section Name */
+    border-bottom: 2px solid var(--primary-color);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* The REQUIRED SOLID RED Background Div Style */
+.content-box {
+    background-color: var(--box-background); /* SOLID RED */
+    padding: 20px;
+    margin: 15px auto; 
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--primary-color); /* Orange Border */
+}
+
+.box-title {
+    color: var(--primary-color); /* Orange Title */
+    margin-bottom: 15px;
+}
+
+/* Section 1: About Us Specifics */
+.video-box {
+    max-width: 800px;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 255,1);
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; 
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 20px;
+   
+    
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.text-content {
+    max-width: 800px;
+    text-align: center;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 255,1);
+}
+
+.text-content p strong {
+    color: var(--primary-color); /* Orange for Strong Text */
+}
+
+/* Section 2: Why Choose Us Specifics */
+.reasons-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+    
+}
+
+.reason-item {
+    flex-basis: 30%; 
+    min-width: 250px;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 255,1);
+}
+
+.reviews-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.review-card {
+    background-color: var(--solid-red);
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 500px;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 255,1);
+}
+
+.review-image {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.menu-item {
+    background-color: var(--solid-red);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 255,1);
+    transition: transform 0.3s ease;
+}
+
+.menu-item h3 {
+    color: var(--primary-color);
+    margin-top: 10px;
+}
+
+.menu-item p {
+    color: var(--color-white);
+    font-weight: bold;
+}
+
+/* Zoom/Transform Effect for Menu Image */
+.menu-image-container {
+    overflow: hidden; /* Ito ang mahalaga para hindi lumabas ang zoom sa box */
+    border-radius: 4px;
+}
+
+.menu-image {
+    width: 100%;
+    height: 350px; /* I-set ang fixed height */
+    object-fit: cover;
+    transition: transform 0.5s ease; /* Smooth transition */
+}
+
+.menu-image-container:hover .menu-image {
+    transform: scale(1.1); /* Zoom-in effect */
+}
+
+
+/* Section 5: Contact Info Specifics */
+.contact-details {
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 255,1);
+}
+
+.sub-navbar ul {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  list-style: none;
+  background: #FAA214;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px 5px rgba(0, 0, 255,1);
+}
+
+.sub-navbar a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.sub-navbar a:hover {
+  color: #00b894;
+}
+
+/* Footer Styling */
+.footer {
+    background-color: var(--nav-footer-bg);
+    color: var(--text-color);
+    text-align: center;
+    padding: 1.5rem 0;
+    border-top: 3px solid var(--primary-color);
+}
+
+/* Responsive Adjustments (for smaller screens) */
+@media (max-width: 768px) {
+    /* ... (Ang iba pang responsive styles) ... */
+}
